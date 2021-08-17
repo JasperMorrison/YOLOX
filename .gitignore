@@ -212,3 +212,7 @@ events.out.tfevents*
 
 # vim
 .vim
+
+# grad-cam
+cam_output*
+data
