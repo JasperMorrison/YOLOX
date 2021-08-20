@@ -130,7 +130,7 @@ class SPPBottleneck(nn.Module):
         self.conv1 = BaseConv(in_channels, hidden_channels, 1, stride=1, act=activation)
         self.m = nn.ModuleList(
             [
-                nn.MaxPool2d(kernel_size=ks, stride=1, padding=ks // 2)
+                nn.MaxPool2d(kernel_size=ks, stride=1, padding=ks // 2, ceil_mode=True)
                 for ks in kernel_sizes
             ]
         )

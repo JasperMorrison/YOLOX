@@ -72,8 +72,8 @@ class Exp(BaseExp):
 
         if getattr(self, "model", None) is None:
             in_channels = [256, 512, 1024]
-            backbone = YOLOPAFPN(self.depth, self.width, in_channels=in_channels)
-            head = YOLOXHead(self.num_classes, self.width, in_channels=in_channels)
+            backbone = YOLOPAFPN(self.depth, self.width, in_channels=in_channels, act='relu')
+            head = YOLOXHead(self.num_classes, self.width, in_channels=in_channels, act='relu')
             self.model = YOLOX(backbone, head)
 
         self.model.apply(init_yolo)
